@@ -1,0 +1,59 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+body {
+    background-color: #556B2F
+}
+.mylogo {
+    height: 300px;
+    width: auto;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #228B22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.nav-links a.active {
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.mylogo {
+    height: 300px;
+    width: auto;
+}
