@@ -1,12 +1,5 @@
 from django.db import models
 
-class Post(models.Model):
-    title = models.CharField(max_length=100)
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    body = models.TextField()
-    
-    def __str__(self):
-        return self.title
 class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
