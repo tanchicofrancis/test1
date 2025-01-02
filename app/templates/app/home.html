@@ -1,8 +1,16 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>Welcome To Tech Frog</h1>
+    <h1>Welcome to Tech Frog</h1>
     <div class="logo-container">
-        <img class="mylogo" src="{% static 'images/favicon.ico' %}" alt="Logo">
+        <img class="mylogo" src="{% static 'images/favicon.ico' %}" alt="Tech Frog Logo" width="50" height="50"> {# Added width and height #}
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'images/POCO_X6_Pro.jpg' %}" alt="POCO X6 Pro" class="card-img-top"> {# Added class for styling #}
+        <div class="card-body">
+            <h5 class="card-title">POCO X6 Pro</h5>
+            <p class="card-text">12GB RAM 512GB ROM</p>
+        </div>
     </div>
 {% endblock content %}
