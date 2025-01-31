@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Order Successful{% endblock %}
+
+{% block content %}
+    <h1>Order Successful!</h1>
+    <p>Your order has been placed successfully!</p>
+    <p><a href="{% url 'home' %}">Go to Home Page</a></p>
+    <p><a href="{% url 'cart_view' %}">Back to Cart</a></p>
+{% endblock %}

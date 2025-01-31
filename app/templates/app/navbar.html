@@ -1,23 +1,25 @@
+{% load static %}
 <div class="navbar">
-    <!-- Brand on the left side -->
-    <div class="brand">
-        <a href="{% url 'home' %}">TECH FROG</a>
-    </div>
-
-    <!-- Search bar in the middle -->
-    <div class="search-bar">
-        <form>
-            <input type="text" name="q" placeholder="Search gadgets..." class="search-input" required>
-            <button type="submit" class="search-button">Search</button>
-        </form>
-    </div>
-
-    <!-- Links on the right side -->
-    <div class="nav-links">
-        <a href="{% url 'product-list' %}">Product List</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'products' %}">Products</a>
-        <a href="{% url 'home' %}">Home</a>
-
-    </div>
+    <header class="header">
+        <nav>
+            <img class="navlogo" src="{% static 'images/favicon.ico' %}" alt="Tech Frog Logo"> 
+            <a href="{% url 'home' %}">TECH FROG</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'product-list' %}">Product List</a>
+            <a href="{% url 'cart_view' %}">Cart</a>
+            <a href="{% url 'update-customer-profile' %}">Update Profile</a>
+            <a href="{% url 'admin_dashboard' %}">Admin Dashboard</a>
+            
+            {% if user.is_authenticated %}
+                <span>Welcome, {{ user.username }}!</span>
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Register</a>
+            {% endif %}
+        </nav>
+    </header>
 </div>

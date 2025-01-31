@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h2>Add Order Item</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Order Item</button>
+  </form>
+  <a href="{% url 'order-item-list' %}">Cancel</a>
+{% endblock %}

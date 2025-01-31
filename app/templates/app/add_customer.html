@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<center>
+<h2>Add New Customer</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+    <a href="{% url 'customer_list' %}">Cancel</a>
+</form>
+{% endblock %}

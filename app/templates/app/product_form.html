@@ -1,11 +1,15 @@
 {% extends 'app/base.html' %}
-{% load static %}
+
+{% block title %}Create Product{% endblock %}
+
 {% block content %}
-    <h1>{% if form.instance.pk %}Edit Product{% else %}Add Product{% endif %}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }} {# Render the form fields as paragraphs #}
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a href="{% url 'product-list' %}" class="btn btn-secondary">Cancel</a>
-    </form>
-{% endblock content %}
+  <h1>Create Product</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- This renders all the form fields as paragraphs -->
+    <button type="submit">Create Product</button>  <!-- Changed button text to "Create Product" -->
+  </form>
+
+  <a href="{% url 'product-display' %}">Cancel</a>  <!-- Redirect to the product display page -->
+{% endblock %}

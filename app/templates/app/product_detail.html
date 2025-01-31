@@ -1,13 +1,12 @@
 {% extends 'app/base.html' %}
-{% load static %}
 {% block content %}
-    <div class="product-detail">
-        <h1>{{ product.name }}</h1>
-        <p>{{ product.description }}</p>
-        <p>Price: ${{ product.price }}</p>
-        {# Add other product details as needed #}
-        <a href="{% url 'product-update' product.pk %}" class="btn btn-primary">Edit</a>
-        <a href="{% url 'product-delete' product.pk %}" class="btn btn-danger">Delete</a>
-        <a href="{% url 'product-list' %}" class="btn btn-secondary">Back to List</a>
-    </div>
-{% endblock content %}
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+    <p>Stock: {{ product.stock_quantity }}</p>
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% endif %}
+    <a href="{% url 'product-update' product.pk %}">Edit</a> | 
+    <a href="{% url 'product-delete' product.pk %}">Delete</a>
+{% endblock %}

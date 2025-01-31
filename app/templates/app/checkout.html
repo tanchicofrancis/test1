@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <h1 class="my-4 text-center">Checkout</h1>
+
+    <div class="container">
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    {{ form.as_p }}
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Total Price:</strong> ₱{{ total_price }}</p>
+                    <p><strong>Note:</strong> {{ note }}</p>
+
+                    {% if error_message %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error_message }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="center-container">
+                <button type="submit" class="btn btn-success" id="place-order-btn">Place Order</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

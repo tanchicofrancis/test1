@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% block title %}Tech Frog{% endblock %}
+{% load static %}
+{% block content %}
+<h1>Update Category</h1>
+<center>
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="name" value="{{ category.name }}">
+  <button type="submit">Update</button>
+</form>
+{% endblock content %}

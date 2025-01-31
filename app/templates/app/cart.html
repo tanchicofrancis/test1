@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+{% if cart %}
+    <ul>
+        {% for product_id, item in cart.items %}
+            <li id="cart-item-{{ product_id }}">
+                {{ item.name }} - {{ item.quantity }} x ₱{{ item.price }}
+                <button 
+                    class="btn btn-danger remove-from-cart" 
+                    data-id="{{ product_id }}" 
+                    data-name="{{ item.name }}">
+                    Remove
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+    <p>Total Price: ₱<span id="total-price">{{ total_price }}</span></p>
+    <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <h1>Welcome to the Admin Dashboard</h1>
+<br>
+  <div style="text-align: center; margin-top: 20px;">
+ 
+    <a href="{% url 'category_list' %}" 
+       style="font-size: 20px; padding: 20px 30px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+      Manage Category
+    </a>
+  </div>
+<br>
+<br>
+  <div style="text-align: center; margin-top: 20px;">
+    
+    <a href="{% url 'customer_list' %}" 
+       style="font-size: 20px; padding: 20px 30px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+      Manage Customer
+    </a>
+  </div>
+<br>
+<br>
+  <div style="text-align: center; margin-top: 20px;">
+
+    <a href="{% url 'product-display' %}" 
+     style="font-size: 20px; padding: 20px 30px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+    Manage Product
+  </a>
+</div>
+<br>
+<br>
+  <div style="text-align: center; margin-top: 20px;">
+
+    <a href="{% url 'order-list' %}" 
+     style="font-size: 20px; padding: 20px 30px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+    Manage Orders
+  </a>
+</div>
+<br>
+<br>
+  <div style="text-align: center; margin-top: 20px;">
+
+    <a href="{% url 'order-item-list' %}" 
+     style="font-size: 20px; padding: 20px 30px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+    Manage Order Items
+  </a>
+</div>
+
+{% endblock %}

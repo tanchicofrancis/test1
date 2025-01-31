@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Profile Details{% endblock %}
+
+{% block content %}
+  <h1>{{ profile.user.username }}'s Profile</h1>
+  <p>Name: {{ profile.user.first_name }} {{ profile.user.last_name }}</p>
+  <p>Email: {{ profile.user.email }}</p>
+  <p>Phone: {{ profile.phone_number }}</p>
+  <p>Address: {{ profile.address }}</p>
+  
+  <a href="{% url 'update-user-profile' profile.id %}" class="btn btn-warning">Edit</a>
+  <a href="{% url 'delete-user-profile' profile.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this profile?')">Delete</a>
+  <a href="{% url 'user-profile-list' %}" class="btn btn-info">Back to Profiles</a>
+{% endblock %}

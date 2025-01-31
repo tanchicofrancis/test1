@@ -1,4 +1,5 @@
 from pathlib import Path
+from djmoney.models.fields import MoneyField
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,6 +16,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+LOGIN_URL = '/login/'
+
+
 
 # Application definition
 
@@ -23,10 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.messages',  
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
-]
+    'accounts.apps.AccountsConfig',
+  ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -43,7 +50,9 @@ ROOT_URLCONF = 'Tanchico.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/ 'templates'],
+        'DIRS': [
+            BASE_DIR / 'app/templates',  # Adjust to include the correct path
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -56,7 +65,13 @@ TEMPLATES = [
     },
 ]
 
+
+
 WSGI_APPLICATION = 'Tanchico.wsgi.application'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 
 # Database
@@ -100,12 +115,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+price = MoneyField(max_digits=10, decimal_places=2, default_currency='PHP')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+LOGIN_URL = '/login/'
 
 STATICFILES_DIRS = [BASE_DIR/ 'static']
 # Default primary key field type

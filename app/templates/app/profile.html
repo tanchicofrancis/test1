@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+    <h2>Your Profile</h2>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{% url 'update-customer-profile' %}">Update Profile</a>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Full Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><strong>Phone Number:</strong> {{ user.phone_number }}</p>
+    <p><strong>Address:</strong> {{ user.address }}</p>
+    
+    
+{% endblock %}

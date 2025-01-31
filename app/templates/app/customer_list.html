@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% block title%}Admin-Customer{%endblock%}
+{% block content %}
+<h1>Customer List</h1>
+<br>
+<center>
+<div>
+    <a href="{% url 'add_customer' %}" style="display: inline-block; padding: 8px 12px; background-color: blue; color: white; text-decoration: none; border-radius: 5px;">
+      Add New Customer
+    </a>
+    <a href="{% url 'admin_dashboard' %}" style="display: inline-block; padding: 8px 12px; background-color: blue; color: white; text-decoration: none; border-radius: 5px;">
+      Back to Admin Dashboard
+    </a>
+    </div>
+    <br>
+
+<ul>
+    {% for customer in customers %}
+        <li>{{ customer.full_name }} - 
+            <a href="{% url 'update_customer' customer.pk %}">Edit</a> | 
+            <a href="{% url 'delete_customer' customer.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

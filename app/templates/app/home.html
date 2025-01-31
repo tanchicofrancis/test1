@@ -1,16 +1,48 @@
 {% extends 'app/base.html' %}
+{% block title %}Tech Frog{% endblock %}
 {% load static %}
 {% block content %}
-    <h1>Welcome to Tech Frog</h1>
-    <div class="logo-container">
-        <img class="mylogo" src="{% static 'images/favicon.ico' %}" alt="Tech Frog Logo" width="50" height="50"> {# Added width and height #}
-    </div>
+<h2 class="welcome-heading">Welcome to Tech Frog Gadget Shop!</h2>
+<br>
+<div class="logo-container">
+    <img class="mylogo" src="{% static 'images/favicon.ico' %}" alt="Tech Frog Logo" width="300" height="300"> 
+</div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="{% static 'images/POCO_X6_Pro.jpg' %}" alt="POCO X6 Pro" class="card-img-top"> {# Added class for styling #}
-        <div class="card-body">
-            <h5 class="card-title">POCO X6 Pro</h5>
-            <p class="card-text">12GB RAM 512GB ROM</p>
-        </div>
-    </div>
+<br>
+<div class="about-us">
+    
+    <p class="home">
+        At Tech Frog Gadget Shop, we’re all about delivering cutting-edge gadgets to tech enthusiasts and casual users alike. From the latest smartphones and accessories to innovative smart devices, our goal is to make technology accessible, affordable, and exciting for everyone.
+    </p>
+
+    <h3 class="W">Who We Are?</h3>
+    <p class="home">
+        Founded with a passion for tech and innovation, Tech Frog is your trusted source for high-quality gadgets. We take pride in offering a carefully curated selection of products that cater to your everyday needs and tech-savvy lifestyle.
+    </p>
+
+    <h3 class="W">What We Offer</h3>
+    <ul>
+        <li><strong>Diverse Product Selection:</strong> From the trendiest gadgets to must-have accessories, we have something for everyone.</li>
+        <li><strong>Affordable Prices:</strong> Competitive pricing to ensure you get the best value for your money.</li>
+        <li><strong>Quality Assurance:</strong> Every product undergoes thorough quality checks to meet our high standards.</li>
+        <li><strong>Customer Support:</strong> We're here to help you make informed choices and provide assistance when needed.</li>
+    </ul>
+
+    <h3 class="W">Why Choose Us?</h3>
+    <p class="home">
+        At Tech Frog, it’s not just about selling gadgets; it’s about creating a seamless shopping experience. Whether you're upgrading your devices or looking for the perfect gift, we’re committed to providing you with:
+    </p>
+    <ul>
+        <li>Fast and reliable shipping</li>
+        <li>Easy returns and exchanges</li>
+        <li>A secure and hassle-free shopping platform</li>
+    </ul>
+
+    <h3 class="W">Join the Tech Frog Family</h3>
+    <p class="home">
+        We believe in building a community of tech enthusiasts who are excited to explore new possibilities. Stay updated with our latest arrivals, exclusive deals, and tips by signing up for our newsletter or following us on social media.
+    </p>
+    <p class="home">Thank you for hopping into Tech Frog Gadget Shop—where technology meets convenience!</p>
+</div>
+
 {% endblock content %}
