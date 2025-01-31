@@ -1,6 +1,21 @@
 from django.contrib.auth.models import User
 from django.db import models
+<<<<<<< HEAD
 from django.core.validators import MinValueValidator
+=======
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    stock = models.PositiveIntegerField()
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
+    image = models.ImageField(upload_to='products/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+>>>>>>> b4b6233a661a1b4405f5dfaf88d9d02ae976302f
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
